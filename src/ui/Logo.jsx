@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useDarkMode } from "../context/DarkModeContext";
 // import tw from "tailwind-styled-components";
 
 // // const StyledLogo = tw.div`
@@ -21,9 +22,10 @@ const Img = styled.img`
 `;
 
 function Logo() {
+  const isDarkMode = useDarkMode();
   return (
     <StyledLogo>
-      <Img src="/logo-light.png" alt="Logo" />
+      <Img src={isDarkMode ? "/logo-dark.png" : "/logo-light.png"} alt="Logo" />
     </StyledLogo>
   );
 }
